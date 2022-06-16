@@ -1,0 +1,26 @@
+version: '3.2'
+services:
+  front:
+    build: ./front
+    container_name: front
+    volumes:
+      - ./front/mywiki/:/mywiki/front/mywiki
+    ports:
+      - "3000:3000"
+    environment:
+      - FAST_REFRESH=false
+      - CHOKIDAR_USEPOLLING=true
+    command: /bin/sh -c "npm run build"
+
+  web:
+   image: nginx
+   container_name: web
+   volumes:
+   - ./web/conf.d:/etc/nginx/conf.d
+   - ./web/templates:/etc/nginx/templates
+   ports:
+   - "80:80"
+   depends_on:
+     - front
+   environment:
+   - NGINX_PORT=80
