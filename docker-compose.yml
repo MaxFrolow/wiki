@@ -10,17 +10,18 @@ services:
     environment:
       - FAST_REFRESH=false
       - CHOKIDAR_USEPOLLING=true
-    command: /bin/sh -c "npm run build"
+    command: /bin/sh -c "npm run start"
+    # command: /bin/sh -c "npm run build"
 
-  web:
-   image: nginx
-   container_name: web
-   volumes:
-   - ./web/conf.d:/etc/nginx/conf.d
-   - ./web/templates:/etc/nginx/templates
-   ports:
-   - "80:80"
-   depends_on:
-     - front
-   environment:
-   - NGINX_PORT=80
+  # web:
+  #  image: nginx
+  #  container_name: web
+  #  volumes:
+  #  - ./web/conf.d:/etc/nginx/conf.d
+  #  - ./web/templates:/etc/nginx/templates
+  #  ports:
+  #  - "80:80"
+  #  depends_on:
+  #    - front
+  #  environment:
+  #  - NGINX_PORT=80

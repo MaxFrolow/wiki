@@ -1,13 +1,96 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  background-color: rgb(206, 206, 206);
+}
+.App {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+h1 {
+  font-size: 3em;
+}
+.btn {
+  font-size: 1.2em;
+  width: 120px;
+  height: 45px;
+  border-style: none;
+  border: 2px solid rgb(122, 0, 67);
+  color: rgb(122, 0, 67);
+  border-radius: 5px;
+  background-color: white;
+}
+.btn:hover{
+  border: 2px solid rgb(122, 0, 67);
+  color: white;
+  border-radius: 5px;
+  background-color: rgb(122, 0, 67);
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.backdrop {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 2000px;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-main {
+  position: fixed;
+  z-index: 3;
+  margin-left: -100px;
+  top: 25%;
+  left: 40%;
+  width: 30%;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px black;
+  background-color: aliceblue;
+  border: 2px solid rgb(122, 0, 67);
+}
+.modal-text{
+  font-size: 0.9em;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.modal-btn-panel{
+  width:70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Item style */
+.item-main {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border: 2px solid rgb(154, 91, 212);
+  border-radius: 10px;
+  width: 240px;
+  height: 240px;
+  box-shadow: 5px 5px 5px black;
+}
+.item-text {
+  height: 40%;
+}
+
+.item-button {
+  color: aliceblue;
+  float: right;
+  vertical-align: bottom;
+  background-color: rgb(154, 91, 212);
 }
